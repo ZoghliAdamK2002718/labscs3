@@ -28,6 +28,37 @@ public class BinarySearchTree
             else
                 add(parent.right(), x);
     }
+    public String preOrder()
+    {
+        return preOrder(root).trim();
+    }
+    public String preOrder(BinaryNode k)
+    {
+        String temp = "";
+        if(k!=null)
+        {
+            temp += k.getValue() + " ";
+            preOrder(k.left());
+            preOrder(k.right());
+        }
+        return temp;
+
+    }
+    public String postOrder()
+    {
+        return postOrder(root).trim(); 
+    }
+    public String postOrder(BinaryNode k)
+    {
+        String temp = "";
+        if(k!=null)
+        {
+        preOrder(k.left());
+        preOrder(k.right());
+        temp += k.getValue() + " ";
+        }
+        return temp;
+    }
 }
 class BinaryNode
 {
